@@ -5,35 +5,32 @@ script.innerText = "function test(){alert('test');}";
 
 let div = document.createElement("div");
 div.id = "Test_Web_Extension";
-div.style.height = "35px";
-div.style.width = "100px";
+div.style.height = "75px";
+div.style.width = "150px";
 div.style.position = "fixed";
 div.style.display = "block";
-div.style.marginTop = "-1800px";
-div.style.marginLeft = "calc(96.5vw)";
-div.style.backgroundColor = "rgba(50,50,50,0.75)";
+div.style.top = "50px";
+div.style.left = "-115px";
+div.style.borderRadius = "0em 5em 5em 0em";
+div.style.cursor = "pointer";
+div.style.backgroundColor = "rgba(225,225,225,0.75)";
+div.style.border = "1px solid rgb(175,175,175)";
+div.style.boxShadow = "3px 2px #555555";
 div.style.zIndex = 999;
-
-let span = document.createElement("span");
-span.id = "Test_Span";
-span.style.position = "absolute";
-//span.style.height = "35px";
-//.span.style.width = "35px";
-span.style.top = "calc(1.5vh)";
-span.style.left = "calc(0.5vw)";
-span.style.color = "rgb(250,250,250)";
-span.style.cursor = "pointer";
-span.setAttribute("onclick", "(function(){let div = document.getElementById('Test_Web_Extension'); let span = document.getElementById('Test_Span'); div.style.marginLeft == 'calc(90.5vw)' ?  (div.style.marginLeft = 'calc(96.5vw)', span.innerHTML = '<<') : (div.style.marginLeft = 'calc(90.5vw)', span.innerHTML = '>>');})()");
-//span.style.backgroundColor = "rgba(200,200,200)";
-span.innerHTML = "<<";
-div.appendChild(span)
+div.setAttribute("onclick", "(function(){let div = document.getElementById('Test_Web_Extension'); let btn = document.getElementById('Test_Button'); div.style.left == '-115px' ? (div.style.left = '-25px', btn.style.display = 'inline') : (div.style.left = '-115px', btn.style.display = 'none');})()");
 
 let btn = document.createElement("input");
 btn.id = "Test_Button";
 btn.type = "button";
-btn.value = "Click me";
-btn.style.marginTop = "7px";
-btn.style.marginLeft = "28px";
+btn.value = "Transpose";
+btn.style.height = "36px";
+btn.style.width = "75px";
+btn.style.position = "absolute";
+btn.style.top = btn.style.left = btn.style.right = btn.style.bottom = 0;
+btn.style.margin = "auto";
+btn.style.display = "none";
+btn.style.borderRadius = "5em";
+btn.style.border = "1px solid rgb(100,100,100)";
 btn.setAttribute("onclick", "test()");
 div.appendChild(btn);
 
